@@ -1,150 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML Sitemap | MR PIPE</title>
-<meta name="description" content="HTML sitemap of official MR PIPE website pages.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://mrpipe.in/sitemap.html">
-<link rel="icon" href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png">
-<style>
-:root{--bg:#f7f9fc;--text:#17202b;--muted:#687282;--orange:#f36f21;--line:#e5e9ef}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff,#f7f9fc);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
-.container{width:min(1050px,calc(100% - 30px));margin:auto}
-header{padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}.logo img{width:58px;height:58px;object-fit:contain}
-.logo strong{font-size:22px;letter-spacing:.7px}.logo span{display:block;font-size:10px;color:#7b8491;letter-spacing:1.4px}
-.home{padding:10px 15px;border-radius:10px;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:13px}
-.hero{padding:55px 0 35px}.eyebrow{color:#e76519;font-size:12px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}
-h1{font-size:clamp(38px,6vw,58px);line-height:1.05;letter-spacing:-2px;margin:10px 0}
-.hero p{color:var(--muted);max-width:700px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding-bottom:55px}
-.sitemap-card{display:flex;gap:16px;padding:21px;border:1px solid var(--line);border-radius:17px;background:#fff;text-decoration:none;color:var(--text);box-shadow:0 8px 28px rgba(20,35,55,.05);transition:.2s}
-.sitemap-card:hover{transform:translateY(-3px);border-color:#ffc7aa}
-.arrow{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#fff2e9;color:var(--orange);font-weight:900;flex:none}
-h2{font-size:18px;margin:0 0 3px}.sitemap-card p{font-size:13px;color:var(--muted);margin:0 0 4px}small{font-size:11px;color:#8a93a0;word-break:break-all}
-footer{border-top:1px solid var(--line);padding:25px 0;color:#7b8491;text-align:center;font-size:12px}footer a{color:var(--orange);text-decoration:none}
-@media(max-width:700px){.grid{grid-template-columns:1fr}header{align-items:flex-start}}
-</style>
-</head>
-<body>
-<div class="container">
-<header>
-<a class="logo" href="/">
-<img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE">
-<div><strong>MR PIPE</strong><span>PIPES FOR PROGRESS.</span></div>
-</a>
-<a class="home" href="/">Home</a>
-</header>
-<section class="hero">
-<div class="eyebrow">Website Navigation</div>
-<h1>MR PIPE Sitemap</h1>
-<p>Explore all important pages available on the official MR PIPE website.</p>
-</section>
-<main class="grid">
-
-      <a class="sitemap-card" href="https://mrpipe.in/">
-        <span class="arrow">→</span>
-        <div>
-          <h2>MR PIPE Rewards - Home</h2>
-          <p>Official MR PIPE Rewards homepage.</p>
-          <small>https://mrpipe.in/</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/about-us">
-        <span class="arrow">→</span>
-        <div>
-          <h2>About MR PIPE</h2>
-          <p>Learn about MR PIPE and its Rewards platform.</p>
-          <small>https://mrpipe.in/about-us</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/faq">
-        <span class="arrow">→</span>
-        <div>
-          <h2>MR PIPE Rewards FAQ</h2>
-          <p>Frequently asked questions about MR PIPE Rewards.</p>
-          <small>https://mrpipe.in/faq</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/contact-support">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Contact &amp; Support</h2>
-          <p>MR PIPE customer support and assistance.</p>
-          <small>https://mrpipe.in/contact-support</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/contact-us">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Contact Us</h2>
-          <p>Contact MR PIPE for business and general enquiries.</p>
-          <small>https://mrpipe.in/contact-us</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/rewards-policy">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Rewards Policy</h2>
-          <p>MR PIPE Rewards rules and point policy.</p>
-          <small>https://mrpipe.in/rewards-policy</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/privacy-policy">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Privacy Policy</h2>
-          <p>MR PIPE privacy and data handling policy.</p>
-          <small>https://mrpipe.in/privacy-policy</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/terms-and-conditions">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Terms &amp; Conditions</h2>
-          <p>MR PIPE Rewards terms and conditions.</p>
-          <small>https://mrpipe.in/terms-and-conditions</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/refund-policy">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Refund &amp; Cancellation Policy</h2>
-          <p>MR PIPE refund and cancellation policy.</p>
-          <small>https://mrpipe.in/refund-policy</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/shipping-return-policy">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Shipping &amp; Return Policy</h2>
-          <p>MR PIPE shipping, return and replacement policy.</p>
-          <small>https://mrpipe.in/shipping-return-policy</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/delete-account">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Account &amp; Data Deletion</h2>
-          <p>MR PIPE Rewards account and data deletion information.</p>
-          <small>https://mrpipe.in/delete-account</small>
-        </div>
-      </a>
-      <a class="sitemap-card" href="https://mrpipe.in/grievance-data-request">
-        <span class="arrow">→</span>
-        <div>
-          <h2>Grievance &amp; Data Request</h2>
-          <p>MR PIPE grievance and personal data request information.</p>
-          <small>https://mrpipe.in/grievance-data-request</small>
-        </div>
-      </a>
-</main>
-<footer>
-© 2026 MR PIPE. All Rights Reserved. |
-Powered by <a href="https://www.morihix.com" target="_blank" rel="noopener">Morihix Pvt. Ltd.</a>
-</footer>
-</div>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mrpipe.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/about-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/contact-support</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/contact-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/rewards-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/terms-and-conditions</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/refund-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/shipping-return-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/delete-account</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mrpipe.in/grievance-data-request</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
