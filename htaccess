@@ -1,0 +1,95 @@
+# =========================================================
+# MR PIPE - Production .htaccess
+# =========================================================
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Default page
+DirectoryIndex index.html
+
+# Disable directory listing
+Options -Indexes
+
+# ---------------------------------------------------------
+# APK DOWNLOAD
+# ---------------------------------------------------------
+<IfModule mod_headers.c>
+    <FilesMatch "\.apk$">
+        Header set Content-Type "application/vnd.android.package-archive"
+        Header set Content-Disposition "attachment"
+        Header set X-Content-Type-Options "nosniff"
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------
+# CACHE
+# ---------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType application/json "access plus 1 day"
+
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/x-icon "access plus 30 days"
+
+    ExpiresByType application/vnd.android.package-archive "access plus 7 days"
+</IfModule>
+
+# ---------------------------------------------------------
+# GZIP COMPRESSION
+# ---------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------
+# SECURITY HEADERS
+# ---------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ---------------------------------------------------------
+# PROTECT SENSITIVE FILES
+# ---------------------------------------------------------
+<FilesMatch "^(\.env|\.git|\.gitignore|composer\.json|composer\.lock|package\.json|package-lock\.json|yarn\.lock|.*\.sql|.*\.log)$">
+    Require all denied
+</FilesMatch>
+
+# Protect .htaccess
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+
+# ---------------------------------------------------------
+# CUSTOM 404 REDIRECT
+# Any missing page/file redirects to the homepage.
+# ---------------------------------------------------------
+ErrorDocument 404 /
+
+# =========================================================
+# END MR PIPE
+# =========================================================
