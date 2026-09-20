@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Privacy Policy | MR PIPE Rewards</title>
+
+  <meta name="description"
+        content="Privacy Policy for the MR PIPE Rewards mobile application. Learn how MR PIPE handles user information, account data, rewards data, security, retention and deletion requests.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mrpipe.in/privacy-policy">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy | MR PIPE Rewards">
+  <meta property="og:description"
+        content="Read the Privacy Policy for the official MR PIPE Rewards application.">
+  <meta property="og:url" content="https://mrpipe.in/privacy-policy">
+  <meta property="og:site_name" content="MR PIPE">
+
+  <meta name="theme-color" content="#d66b0b">
+
+  <link rel="icon"
+        href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png">
+
+  <style>
+
+    :root {
+      --orange: #d66b0b;
+      --orange-dark: #a94700;
+      --black: #11151a;
+      --dark: #181d23;
+      --text: #24282e;
+      --muted: #68717c;
+      --light: #f6f7f9;
+      --white: #ffffff;
+      --border: #e6e8eb;
+      --shadow: 0 18px 50px rgba(0,0,0,.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: #f7f8fa;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--orange-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      width: min(1100px, 92%);
+      min-height: 76px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo img {
+      width: 110px;
+      height: auto;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 10px 17px;
+
+      border-radius: 999px;
+
+      background: var(--black);
+      color: white;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(214,107,11,.15),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #f4f5f7
+        );
+
+      padding: 75px 20px;
+      text-align: center;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      background: #fff0e3;
+      color: var(--orange-dark);
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .hero-badge span {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--orange);
+    }
+
+    h1 {
+      color: var(--black);
+
+      font-size: clamp(36px, 6vw, 60px);
+
+      line-height: 1.05;
+
+      letter-spacing: -.045em;
+
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    .updated {
+      margin-top: 15px;
+
+      font-size: 12px !important;
+      color: #858d97 !important;
+    }
+
+    /* CONTENT */
+
+    .page {
+      width: min(950px, 92%);
+      margin: 50px auto 80px;
+    }
+
+    .notice {
+      padding: 20px 22px;
+
+      background: #fff7ed;
+
+      border: 1px solid #f5d2af;
+
+      border-left: 4px solid var(--orange);
+
+      border-radius: 14px;
+
+      margin-bottom: 28px;
+
+      color: #5f4a38;
+
+      font-size: 14px;
+    }
+
+    .content {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 24px;
+
+      box-shadow: var(--shadow);
+
+      padding: clamp(25px, 5vw, 50px);
+    }
+
+    section {
+      margin-bottom: 38px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: var(--black);
+
+      font-size: 25px;
+
+      line-height: 1.25;
+
+      margin-bottom: 12px;
+    }
+
+    h2::before {
+      content: "";
+
+      display: inline-block;
+
+      width: 5px;
+      height: 22px;
+
+      border-radius: 10px;
+
+      background: var(--orange);
+
+      margin-right: 10px;
+
+      vertical-align: -2px;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin: 20px 0 8px;
+      color: #292e35;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 23px;
+      margin: 12px 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .data-table {
+      width: 100%;
+
+      border-collapse: collapse;
+
+      margin: 18px 0;
+
+      font-size: 14px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 13px;
+
+      border: 1px solid var(--border);
+
+      text-align: left;
+
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--light);
+      color: var(--black);
+    }
+
+    .contact-box {
+      padding: 22px;
+
+      background: var(--light);
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      margin-top: 15px;
+    }
+
+    .contact-box strong {
+      color: var(--black);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0e1115;
+      color: #aeb5bd;
+
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: white;
+      font-weight: 800;
+    }
+
+    .footer-logo img {
+      width: 70px;
+      filter: brightness(0) invert(1);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 12px;
+    }
+
+    @media(max-width:700px) {
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo img {
+        width: 90px;
+      }
+
+      .back-btn {
+        padding: 8px 13px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+
+      .content {
+        padding: 25px 20px;
+        border-radius: 18px;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+
+  <!-- Organization Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://mrpipe.in/#organization",
+
+    "name": "MR PIPE",
+
+    "url": "https://mrpipe.in/",
+
+    "logo": "https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png",
+
+    "email": "mailto:support@mrpipe.in",
+
+    "telephone": "+91 77425 50254"
+  }
+  </script>
+
+  <!-- Privacy Policy WebPage Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+
+    "@type": "WebPage",
+
+    "@id": "https://mrpipe.in/privacy-policy#webpage",
+
+    "url": "https://mrpipe.in/privacy-policy",
+
+    "name": "Privacy Policy | MR PIPE Rewards",
+
+    "description":
+      "Privacy Policy for the MR PIPE Rewards mobile application.",
+
+    "isPartOf": {
+      "@id": "https://mrpipe.in/#website"
+    },
+
+    "about": {
+      "@id": "https://mrpipe.in/#organization"
+    },
+
+    "inLanguage": "en-IN"
+  }
+  </script>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <a class="logo" href="/">
+      <img
+        src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png"
+        alt="MR PIPE Logo">
+    </a>
+
+    <a class="back-btn" href="/">
+      ← Back to Website
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-badge">
+    <span></span>
+    MR PIPE Rewards
+  </div>
+
+  <h1>Privacy Policy</h1>
+
+  <p>
+    Your privacy matters to us. This Privacy Policy explains how
+    MR PIPE handles information when you use the MR PIPE Rewards
+    mobile application and related services.
+  </p>
+
+  <p class="updated">
+    Last Updated: September 21, 2026
+  </p>
+
+</section>
+
+
+<main class="page">
+
+  <div class="notice">
+
+    <strong>Important:</strong>
+    This Privacy Policy should accurately reflect the actual data
+    collected and processed by the MR PIPE Rewards application.
+    Update the data categories below if your final app uses additional
+    information or third-party services.
+
+  </div>
+
+
+  <article class="content">
+
+
+    <!-- 1 -->
+
+    <section>
+
+      <h2>1. About This Privacy Policy</h2>
+
+      <p>
+        This Privacy Policy applies to the
+        <strong>MR PIPE Rewards</strong> mobile application
+        ("App") operated by <strong>MR PIPE</strong>
+        ("MR PIPE", "we", "us", or "our").
+      </p>
+
+      <p>
+        It explains what information may be collected through the App,
+        how that information may be used, how it may be protected,
+        when it may be shared, and the choices available to users.
+      </p>
+
+    </section>
+
+
+    <!-- 2 -->
+
+    <section>
+
+      <h2>2. Information We May Collect</h2>
+
+      <p>
+        Depending on the features you use, the App may collect
+        information such as:
+      </p>
+
+      <table class="data-table">
+
+        <thead>
+
+          <tr>
+            <th>Information</th>
+            <th>Possible Purpose</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Name and profile information</td>
+            <td>
+              Account creation, identification and account management.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Mobile number</td>
+            <td>
+              Account authentication, OTP verification and support.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Email address</td>
+            <td>
+              Account communication, support and important service
+              notifications where applicable.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Dealer / retailer / plumber information</td>
+            <td>
+              Account classification, rewards management and
+              program administration.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Reward points and transaction information</td>
+            <td>
+              Calculating, maintaining and managing rewards,
+              points and eligible transactions.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Device and technical information</td>
+            <td>
+              Security, diagnostics, performance and service
+              improvement where applicable.
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <p>
+        We only collect information that is necessary for the
+        relevant features and purposes of the App, subject to the
+        actual implementation of the application.
+      </p>
+
+    </section>
+
+
+    <!-- 3 -->
+
+    <section>
+
+      <h2>3. How We Use Information</h2>
+
+      <p>
+        Information may be used for purposes including:
+      </p>
+
+      <ul>
+
+        <li>Creating and managing user accounts.</li>
+
+        <li>Authenticating users and protecting accounts.</li>
+
+        <li>Managing MR PIPE Rewards accounts and reward points.</li>
+
+        <li>Processing eligible reward transactions.</li>
+
+        <li>Providing customer support.</li>
+
+        <li>Sending important service-related notifications.</li>
+
+        <li>Detecting and preventing fraud, abuse or unauthorized activity.</li>
+
+        <li>Maintaining and improving the App.</li>
+
+        <li>Complying with applicable legal requirements.</li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- 4 -->
+
+    <section>
+
+      <h2>4. Reward Points and Transactions</h2>
+
+      <p>
+        If you participate in the MR PIPE Rewards program, information
+        associated with your account may be used to maintain your
+        reward balance and record eligible reward transactions.
+      </p>
+
+      <p>
+        Reward eligibility, earning, redemption, transfer,
+        cancellation, expiry and other program rules may be governed
+        by separate MR PIPE Rewards Terms and Conditions.
+      </p>
+
+    </section>
+
+
+    <!-- 5 -->
+
+    <section>
+
+      <h2>5. Sharing of Information</h2>
+
+      <p>
+        We do not sell personal information to third parties.
+      </p>
+
+      <p>
+        Information may be shared with service providers or other
+        parties only where reasonably necessary to operate the App,
+        provide services, maintain infrastructure, process information,
+        protect security, prevent fraud, or comply with applicable law.
+      </p>
+
+      <p>
+        Where third-party service providers process information on
+        our behalf, we expect them to handle information according
+        to applicable contractual and legal requirements.
+      </p>
+
+    </section>
+
+
+    <!-- 6 -->
+
+    <section>
+
+      <h2>6. Third-Party Services</h2>
+
+      <p>
+        The App may use third-party services such as hosting,
+        analytics, authentication, notification, crash reporting,
+        payment or other infrastructure services, depending on
+        the features enabled in the App.
+      </p>
+
+      <p>
+        Such services may process certain information necessary
+        to provide their functionality. The actual third-party
+        services used by the released App should be reflected in
+        the final version of this Privacy Policy and the Google
+        Play Data Safety declaration.
+      </p>
+
+    </section>
+
+
+    <!-- 7 -->
+
+    <section>
+
+      <h2>7. Data Security</h2>
+
+      <p>
+        We take reasonable technical and organizational measures
+        designed to protect information against unauthorized access,
+        misuse, alteration, disclosure or destruction.
+      </p>
+
+      <p>
+        However, no internet transmission or electronic storage
+        system can be guaranteed to be completely secure.
+      </p>
+
+    </section>
+
+
+    <!-- 8 -->
+
+    <section>
+
+      <h2>8. Data Retention</h2>
+
+      <p>
+        We retain information only for as long as reasonably necessary
+        for the purposes described in this Privacy Policy, to provide
+        the requested services, maintain legitimate business records,
+        resolve disputes, prevent fraud, enforce agreements, or comply
+        with applicable legal obligations.
+      </p>
+
+      <p>
+        Where data is no longer required, it may be deleted or
+        anonymized in accordance with applicable requirements.
+      </p>
+
+    </section>
+
+
+    <!-- 9 -->
+
+    <section>
+
+      <h2>9. Account and Data Deletion</h2>
+
+      <p>
+        If the MR PIPE Rewards App allows users to create an account,
+        users can request deletion of their account and associated
+        data through the designated account deletion process.
+      </p>
+
+      <p>
+        Requests may be submitted through our dedicated account
+        deletion page:
+      </p>
+
+      <p>
+        <a href="https://mrpipe.in/delete-account">
+          https://mrpipe.in/delete-account
+        </a>
+      </p>
+
+      <p>
+        Certain information may need to be retained where required
+        for legitimate reasons such as security, fraud prevention,
+        dispute resolution or legal/regulatory compliance. Any such
+        retention should be explained to the user.
+      </p>
+
+    </section>
+
+
+    <!-- 10 -->
+
+    <section>
+
+      <h2>10. Children's Privacy</h2>
+
+      <p>
+        The App is not intended to knowingly collect personal
+        information from children in violation of applicable laws.
+      </p>
+
+      <p>
+        If you believe that a child has provided personal information
+        to us inappropriately, please contact us using the details
+        provided below.
+      </p>
+
+    </section>
+
+
+    <!-- 11 -->
+
+    <section>
+
+      <h2>11. Your Privacy Choices</h2>
+
+      <p>
+        Depending on applicable law and the features available in
+        the App, you may have rights concerning your personal
+        information, including requesting access, correction or
+        deletion of information.
+      </p>
+
+      <p>
+        To make a privacy-related request, contact us at:
+      </p>
+
+      <div class="contact-box">
+
+        <strong>Privacy & Support</strong>
+
+        <br><br>
+
+        Email:
+        <a href="mailto:support@mrpipe.in">
+          support@mrpipe.in
+        </a>
+
+        <br>
+
+        Phone:
+        <a href="tel:+917742550254">
+          +91 77425 50254
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- 12 -->
+
+    <section>
+
+      <h2>12. Changes to This Privacy Policy</h2>
+
+      <p>
+        We may update this Privacy Policy from time to time to reflect
+        changes in the App, our services, legal requirements or data
+        handling practices.
+      </p>
+
+      <p>
+        When changes are made, the updated "Last Updated" date will
+        appear at the top of this page.
+      </p>
+
+    </section>
+
+
+    <!-- 13 -->
+
+    <section>
+
+      <h2>13. Contact Us</h2>
+
+      <p>
+        If you have questions, concerns or requests regarding this
+        Privacy Policy or the MR PIPE Rewards App, please contact us.
+      </p>
+
+      <div class="contact-box">
+
+        <strong>MR PIPE</strong>
+
+        <br><br>
+
+        <strong>Customer Relationship Manager</strong>
+
+        <br>
+
+        Phone:
+        <a href="tel:+917742550254">
+          +91 77425 50254
+        </a>
+
+        <br>
+
+        Email:
+        <a href="mailto:support@mrpipe.in">
+          support@mrpipe.in
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </article>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-logo">
+
+      <img
+        src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png"
+        alt="MR PIPE">
+
+      <span>MR PIPE</span>
+
+    </div>
+
+    <p>
+      © <span id="year"></span> MR PIPE.
+      All Rights Reserved.
+      |
+      Powered by
+      <a
+        href="https://www.morihix.com"
+        target="_blank"
+        rel="noopener">
+        Morihix Pvt. Ltd.
+      </a>
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
