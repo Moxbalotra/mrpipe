@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How MR PIPE Rewards Works | MR PIPE</title>
+  <meta name="description" content="Learn how MR PIPE Rewards works. Earn points, transfer eligible points through the permitted partner network, and redeem rewards.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png">
+  <style>
+    :root{
+      --primary:#087f5b;
+      --primary-dark:#056246;
+      --accent:#f4b400;
+      --ink:#12231d;
+      --muted:#65736e;
+      --line:#e7ece9;
+      --bg:#f7faf8;
+      --card:#ffffff;
+      --soft:#eef8f4;
+      --shadow:0 18px 50px rgba(18,35,29,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,calc(100% - 36px));margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:118px;max-height:46px;object-fit:contain}
+    .menu{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650;color:#42534d}
+    .menu a:hover{color:var(--primary)}
+    .download{
+      display:inline-flex;align-items:center;justify-content:center;
+      background:var(--primary);color:#fff;padding:11px 18px;border-radius:12px;
+      font-weight:750;box-shadow:0 8px 20px rgba(8,127,91,.18)
+    }
+    .download:hover{background:var(--primary-dark)}
+    .hero{
+      position:relative;overflow:hidden;
+      padding:88px 0 74px;
+      background:linear-gradient(180deg,#f4fbf8 0%,#fff 100%);
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;border-radius:50%;pointer-events:none;
+      filter:blur(2px)
+    }
+    .hero:before{width:420px;height:420px;background:rgba(8,127,91,.07);right:-160px;top:-170px}
+    .hero:after{width:300px;height:300px;background:rgba(244,180,0,.08);left:-140px;bottom:-150px}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:58px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--primary);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.12em;
+      margin-bottom:18px
+    }
+    .eyebrow span{width:8px;height:8px;background:var(--accent);border-radius:50%}
+    h1{font-size:clamp(40px,6vw,68px);line-height:1.03;letter-spacing:-.045em;margin-bottom:22px}
+    h1 em{font-style:normal;color:var(--primary)}
+    .lead{font-size:18px;color:var(--muted);max-width:650px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:13px;font-weight:750;border:1px solid var(--line)
+    }
+    .btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn.secondary{background:#fff;color:var(--ink)}
+    .flow-card{
+      background:#fff;border:1px solid var(--line);border-radius:28px;padding:25px;
+      box-shadow:var(--shadow)
+    }
+    .flow-title{font-weight:800;font-size:17px;margin-bottom:20px}
+    .mini-flow{display:grid;gap:11px}
+    .mini-step{display:flex;align-items:center;gap:13px;padding:13px;border:1px solid var(--line);border-radius:15px}
+    .num{
+      width:34px;height:34px;display:grid;place-items:center;border-radius:11px;
+      background:var(--soft);color:var(--primary);font-weight:850;flex:0 0 auto
+    }
+    .mini-step strong{display:block;font-size:14px}
+    .mini-step small{color:var(--muted);font-size:12px}
+    section{padding:84px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 46px}
+    .section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.035em;line-height:1.1;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .step{
+      position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;
+      padding:25px 19px;box-shadow:0 10px 32px rgba(18,35,29,.045)
+    }
+    .step-number{font-size:12px;color:var(--primary);font-weight:850;letter-spacing:.08em}
+    .step-icon{
+      width:48px;height:48px;display:grid;place-items:center;margin:15px 0;
+      border-radius:15px;background:var(--soft);font-size:23px
+    }
+    .step h3{font-size:17px;margin-bottom:8px}
+    .step p{font-size:13px;color:var(--muted)}
+    .roles{background:var(--bg)}
+    .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .role{
+      background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;
+      box-shadow:0 10px 35px rgba(18,35,29,.04)
+    }
+    .role-badge{
+      display:inline-flex;padding:7px 10px;border-radius:999px;background:var(--soft);
+      color:var(--primary);font-size:12px;font-weight:850;margin-bottom:18px
+    }
+    .role h3{font-size:24px;margin-bottom:9px}
+    .role p{color:var(--muted);font-size:14px}
+    .role ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+    .role li{font-size:13px;display:flex;gap:9px}
+    .role li:before{content:"✓";color:var(--primary);font-weight:900}
+    .network-wrap{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:stretch}
+    .network-card,.rule-card{
+      border:1px solid var(--line);border-radius:26px;background:#fff;padding:30px;
+      box-shadow:0 12px 36px rgba(18,35,29,.05)
+    }
+    .network-card h3,.rule-card h3{font-size:25px;margin-bottom:9px}
+    .network-card p,.rule-card p{color:var(--muted);font-size:14px}
+    .network-flow{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:30px;flex-wrap:wrap}
+    .node{padding:14px 18px;border-radius:16px;background:var(--soft);font-weight:800;color:var(--primary)}
+    .arrow{font-size:22px;color:#a4b2ad;font-weight:800}
+    .rules{margin-top:24px;display:grid;gap:12px}
+    .rule{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border-radius:14px;background:var(--bg);font-size:13px}
+    .rule b{color:var(--primary)}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit{padding:24px;border:1px solid var(--line);border-radius:21px;background:#fff}
+    .benefit-icon{font-size:24px;margin-bottom:12px}
+    .benefit h3{font-size:17px;margin-bottom:6px}
+    .benefit p{font-size:13px;color:var(--muted)}
+    .cta{
+      padding:0 0 84px
+    }
+    .cta-box{
+      border-radius:30px;padding:54px;
+      background:linear-gradient(135deg,#087f5b,#075c44);
+      color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px;
+      overflow:hidden;position:relative
+    }
+    .cta-box:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);right:-100px;top:-130px}
+    .cta-box h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin-bottom:10px}
+    .cta-box p{color:rgba(255,255,255,.78);max-width:650px}
+    .cta-box .btn{background:#fff;color:var(--primary);border-color:#fff;position:relative;z-index:1}
+    footer{border-top:1px solid var(--line);background:#fbfcfb;padding:48px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}
+    .footer-brand p{color:var(--muted);font-size:13px;margin-top:14px;max-width:330px}
+    footer h4{font-size:13px;margin-bottom:14px}
+    footer ul{list-style:none;display:grid;gap:9px}
+    footer li a{font-size:13px;color:var(--muted)}
+    footer li a:hover{color:var(--primary)}
+    .copyright{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:#7b8782;font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .hero-grid,.network-wrap{grid-template-columns:1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .role-grid,.benefits{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:650px){
+      .container{width:min(100% - 24px,1160px)}
+      .nav{height:68px}
+      .menu{gap:13px;font-size:12px}
+      .menu a:nth-child(n+3){display:none}
+      .download{padding:9px 12px;font-size:12px}
+      .brand img{width:100px}
+      .hero{padding:60px 0}
+      section{padding:64px 0}
+      .steps{grid-template-columns:1fr}
+      .cta-box{padding:34px 25px;align-items:flex-start;flex-direction:column}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="MR PIPE Home">
+      <img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE">
+    </a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact-support.html">Support</a>
+      <a class="download" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download App</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span></span> MR PIPE Rewards</div>
+        <h1>How MR PIPE Rewards <em>Works</em></h1>
+        <p class="lead">
+          MR PIPE Rewards connects eligible channel partners with a simple points-based rewards journey.
+          Earn eligible points, transfer them through permitted routes, and redeem them for available rewards.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download App</a>
+          <a class="btn secondary" href="rewards-policy.html">View Rewards Policy</a>
+        </div>
+      </div>
+
+      <div class="flow-card">
+        <div class="flow-title">Your rewards journey</div>
+        <div class="mini-flow">
+          <div class="mini-step"><div class="num">1</div><div><strong>Register & Participate</strong><small>Use your eligible MR PIPE Rewards account.</small></div></div>
+          <div class="mini-step"><div class="num">2</div><div><strong>Earn Points</strong><small>Receive eligible points according to the programme.</small></div></div>
+          <div class="mini-step"><div class="num">3</div><div><strong>Transfer</strong><small>Move eligible points through permitted partner routes.</small></div></div>
+          <div class="mini-step"><div class="num">4</div><div><strong>Redeem</strong><small>Use available points for listed rewards.</small></div></div>
+          <div class="mini-step"><div class="num">5</div><div><strong>Get Reward</strong><small>Complete the applicable redemption process.</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="container">
+      <div class="section-head">
+        <h2>From points to rewards</h2>
+        <p>A clear five-step flow designed to keep the MR PIPE Rewards experience easy to understand.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">STEP 01</div>
+          <div class="step-icon">👤</div>
+          <h3>Register</h3>
+          <p>Create or access your eligible MR PIPE Rewards account and keep your profile information accurate.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 02</div>
+          <div class="step-icon">⭐</div>
+          <h3>Earn Points</h3>
+          <p>Eligible participants receive points according to qualifying programme activities and rules.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 03</div>
+          <div class="step-icon">🔄</div>
+          <h3>Transfer</h3>
+          <p>Where enabled, eligible points can move between permitted partner categories.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 04</div>
+          <div class="step-icon">🎁</div>
+          <h3>Redeem</h3>
+          <p>Choose an available reward and submit the redemption request using the applicable process.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 05</div>
+          <div class="step-icon">🏆</div>
+          <h3>Receive</h3>
+          <p>Once approved and processed, the selected reward is fulfilled under the applicable terms.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="roles">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built for the MR PIPE partner network</h2>
+        <p>The programme supports different partner roles, with permissions and point movement governed by the applicable programme rules.</p>
+      </div>
+      <div class="role-grid">
+        <article class="role">
+          <span class="role-badge">PARTNER 01</span>
+          <h3>Dealer</h3>
+          <p>Dealers can participate in earning and, where the programme enables it, transfer eligible points to permitted downstream partners.</p>
+          <ul>
+            <li>Earn eligible points</li>
+            <li>Transfer to Retailer or Plumber where enabled</li>
+            <li>Use points according to programme rules</li>
+          </ul>
+        </article>
+        <article class="role">
+          <span class="role-badge">PARTNER 02</span>
+          <h3>Retailer</h3>
+          <p>Retailers can receive and use eligible points, and can transfer permitted points onward to Plumbers where enabled.</p>
+          <ul>
+            <li>Receive eligible points</li>
+            <li>Transfer to Plumber where enabled</li>
+            <li>Redeem according to available options</li>
+          </ul>
+        </article>
+        <article class="role">
+          <span class="role-badge">PARTNER 03</span>
+          <h3>Plumber</h3>
+          <p>Plumbers can receive eligible points and use them through the available redemption journey.</p>
+          <ul>
+            <li>Receive eligible points</li>
+            <li>View points balance</li>
+            <li>Redeem available rewards</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Point transfer flow</h2>
+        <p>Point movement is controlled by the programme. Only routes enabled in the MR PIPE Rewards system are permitted.</p>
+      </div>
+      <div class="network-wrap">
+        <div class="network-card">
+          <h3>Permitted partner direction</h3>
+          <p>The typical downstream flow is designed around the partner hierarchy.</p>
+          <div class="network-flow">
+            <div class="node">Dealer</div>
+            <div class="arrow">→</div>
+            <div class="node">Retailer</div>
+            <div class="arrow">→</div>
+            <div class="node">Plumber</div>
+          </div>
+          <div class="rules">
+            <div class="rule"><b>Dealer → Retailer</b><span>Permitted where the feature is enabled for the account.</span></div>
+            <div class="rule"><b>Dealer → Plumber</b><span>Permitted where the feature is enabled for the account.</span></div>
+            <div class="rule"><b>Retailer → Plumber</b><span>Permitted where the feature is enabled for the account.</span></div>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <h3>Important transfer rule</h3>
+          <p>Points cannot be freely traded in every direction. The app controls the routes that are available to each participant.</p>
+          <div class="rules">
+            <div class="rule"><b>Retailer:</b><span>must not sell or transfer points back to a Dealer or higher-level participant where that route is not enabled.</span></div>
+            <div class="rule"><b>Dealer:</b><span>must not transfer points to a route that is not provided by the programme.</span></div>
+            <div class="rule"><b>Everyone:</b><span>unauthorised trading, manipulation or misuse of points may lead to action under the Rewards Policy.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg)">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why use MR PIPE Rewards?</h2>
+        <p>Key parts of the programme experience are designed to make points easier to track and use.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit"><div class="benefit-icon">📊</div><h3>Track Your Points</h3><p>Check your eligible points balance and keep your rewards activity in one place.</p></article>
+        <article class="benefit"><div class="benefit-icon">🔐</div><h3>Controlled Transfers</h3><p>Available transfer routes are governed by participant role and programme settings.</p></article>
+        <article class="benefit"><div class="benefit-icon">🎁</div><h3>Reward Redemption</h3><p>Use eligible points to request rewards available through the programme.</p></article>
+        <article class="benefit"><div class="benefit-icon">📱</div><h3>Mobile Access</h3><p>Manage your MR PIPE Rewards journey through the mobile application.</p></article>
+        <article class="benefit"><div class="benefit-icon">🧾</div><h3>Clear Policies</h3><p>Programme rules, transfer conditions and redemption terms are available online.</p></article>
+        <article class="benefit"><div class="benefit-icon">💬</div><h3>Support</h3><p>Need help? Contact the MR PIPE Customer Relationship Manager for assistance.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Ready to start your rewards journey?</h2>
+          <p>Download the MR PIPE Rewards app to access your account, track eligible points and use the available programme features.</p>
+        </div>
+        <a class="btn" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download MR PIPE App</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE"></a>
+        <p>Pipes for Progress. MR PIPE Rewards helps eligible partners participate in a structured points and rewards programme.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="rewards-policy.html">Rewards Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Account & Data</h4>
+        <ul>
+          <li><a href="delete-account.html">Delete Account</a></li>
+          <li><a href="grievance-data-request.html">Grievance / Data Request</a></li>
+          <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact-support.html">Contact Support</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="https://wa.me/917742550254">WhatsApp</a></li>
+          <li><a href="tel:+917742550254">Call +91 77425 50254</a></li>
+          <li><a href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download App</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> MR PIPE. All Rights Reserved.</span>
+      <span>Powered by <a href="https://www.morihix.com" target="_blank" rel="noopener">Morihix Pvt. Ltd.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
