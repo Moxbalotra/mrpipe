@@ -1,1185 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR PIPE Rewards | Pipes for Progress.</title>
+<meta name="description" content="MR PIPE Rewards app for eligible dealers, retailers and plumbers. Manage points, transfers, rewards and support from one place.">
+<meta name="keywords" content="MR PIPE, MR PIPE Rewards, pipe rewards app, dealer rewards, retailer rewards, plumber rewards">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mrpipe.in/">
+<link rel="icon" href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png">
+<meta property="og:title" content="MR PIPE Rewards | Pipes for Progress.">
+<meta property="og:description" content="Manage eligible MR PIPE Rewards, points and support in one place.">
+<meta property="og:url" content="https://mrpipe.in/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png">
+<meta name="twitter:card" content="summary_large_image">
 
-  <!-- Primary SEO -->
-  <title>MR PIPE | Official App Download | Pipes for Progress</title>
-  <meta name="description" content="Download the official MR PIPE app. Stay connected with MR PIPE for a fast, simple and convenient digital experience. Contact MR PIPE customer support at +91 77425 50254." />
-  <meta name="keywords" content="MR PIPE, MR PIPE app, MR PIPE official app, MR PIPE pipes, pipe company, pipes for progress, MR PIPE download, MR PIPE customer support" />
-  <meta name="author" content="MR PIPE" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="theme-color" content="#d66b0b" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
+<style>
+:root{
+  --bg:#f7f9fc;--bg2:#ffffff;--card:#ffffff;--text:#17202b;--muted:#667085;
+  --orange:#f36f21;--orange2:#ff8a3d;--line:#e7ebf0;--soft:#fff5ee;
+  --shadow:0 18px 55px rgba(24,39,75,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:linear-gradient(180deg,#fff 0%,#f7f9fc 52%,#fff 100%);line-height:1.65}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://mrpipe.in/" />
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo img{width:49px;height:49px;object-fit:contain}
+.logo strong{font-size:21px;letter-spacing:.8px;color:#111827}
+.logo span{display:block;font-size:10px;color:#7b8491;letter-spacing:1.4px}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{font-size:13px;text-decoration:none;color:#596273;padding:9px 11px;border-radius:9px;transition:.2s}
+.menu a:hover{color:var(--orange);background:#fff5ee}
+.menu .primary{background:var(--orange);color:#fff;font-weight:800;padding:10px 16px;box-shadow:0 8px 20px rgba(243,111,33,.22)}
+.menu-toggle{display:none;background:#fff;border:1px solid var(--line);color:#26303d;border-radius:9px;padding:8px 11px;font-size:20px}
 
-  <!-- Mobile / Performance -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+.hero{min-height:700px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;padding:72px 0 65px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(243,111,33,.12);border-radius:50%;pointer-events:none}
+.hero:before{width:480px;height:480px;right:-170px;top:60px;box-shadow:0 0 100px rgba(243,111,33,.06)}
+.hero:after{width:340px;height:340px;right:-100px;top:130px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid #ffd4bd;border-radius:999px;background:#fff6ef;color:#e66016;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h1{font-size:clamp(46px,7vw,82px);line-height:.98;letter-spacing:-4px;margin:20px 0;max-width:720px;color:#17202b}
+.gradient{background:linear-gradient(110deg,#17202b 20%,#ef6d1d 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:650px;margin:0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid var(--line);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 10px 25px rgba(243,111,33,.18)}
+.btn-soft{background:#fff;color:#3e4856;border-color:#dfe4ea}
+.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#7a8492;font-size:12px}
+.trust b{color:#26303d;display:block;font-size:14px}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="MR PIPE | Official App Download" />
-  <meta property="og:description" content="Download the official MR PIPE Rewards app and stay connected with MR PIPE. Pipes for Progress." />
-  <meta property="og:url" content="https://mrpipe.in/" />
-  <meta property="og:site_name" content="MR PIPE" />
-  <meta property="og:image" content="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" />
-  <meta property="og:image:alt" content="MR PIPE official logo" />
-  <meta property="og:locale" content="en_IN" />
+.phone-stage{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}
+.phone{width:270px;height:520px;border:7px solid #dce1e7;border-radius:39px;background:linear-gradient(155deg,#fff,#f1f4f7);box-shadow:0 35px 90px rgba(24,39,75,.20),0 0 70px rgba(243,111,33,.08);position:relative;overflow:hidden;transform:rotate(4deg);z-index:3}
+.phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:95px;height:20px;background:#202731;border-radius:0 0 15px 15px;z-index:5}
+.screen{padding:48px 18px 18px}
+.screen-logo{width:68px;height:68px;object-fit:contain;margin:3px auto 18px;display:block}
+.screen-title{font-size:25px;font-weight:900;text-align:center;color:#17202b}
+.screen-sub{font-size:11px;color:#89929e;text-align:center;margin-bottom:22px}
+.fake-card{border:1px solid #e3e7ec;background:#fff;border-radius:15px;padding:16px;margin-bottom:11px;box-shadow:0 7px 20px rgba(24,39,75,.05)}
+.fake-card small{color:#858e9b}.fake-card b{display:block;font-size:20px;margin-top:2px;color:#27313e}
+.mini-btn{height:36px;border-radius:9px;background:var(--orange);margin-top:14px}
+.float{position:absolute;z-index:5;background:rgba(255,255,255,.96);border:1px solid #e4e8ed;box-shadow:var(--shadow);border-radius:15px;padding:13px 15px}
+.float strong{display:block;font-size:14px}.float small{color:#89929e;font-size:11px}
+.f1{top:85px;left:10px}.f2{right:0;top:180px}.f3{bottom:55px;left:15px}
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MR PIPE | Official App Download" />
-  <meta name="twitter:description" content="Download the official MR PIPE app. Pipes for Progress." />
-  <meta name="twitter:image" content="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" />
+.section{padding:85px 0}
+.section-head{text-align:center;max-width:730px;margin:0 auto 42px}
+.kicker{color:#ed6b1d;font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
+.section h2{font-size:clamp(30px,4vw,47px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0 12px;color:#17202b}
+.section-head p{color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{padding:25px;border:1px solid var(--line);border-radius:20px;background:#fff;min-height:190px;box-shadow:0 10px 35px rgba(24,39,75,.05)}
+.feature .ico{font-size:26px}.feature h3{font-size:18px;margin:12px 0 6px}.feature p{font-size:14px;color:#6f7886;margin:0}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.role{padding:28px;border:1px solid #e8ebef;border-radius:20px;background:linear-gradient(145deg,#fff7f1,#fff);box-shadow:0 10px 30px rgba(24,39,75,.05)}
+.role b{font-size:21px}.role p{color:var(--muted);font-size:14px}
+.download{padding:30px;border-radius:25px;border:1px solid #ffd7c1;background:linear-gradient(120deg,#fff4ec,#fff);display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 15px 45px rgba(24,39,75,.06)}
+.download h2{margin:0 0 7px;font-size:30px;color:#17202b}.download p{margin:0;color:var(--muted);font-size:14px}
+.map-wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;align-items:stretch}
+.map-info{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 10px 35px rgba(24,39,75,.05)}
+.map-info h3{font-size:26px;margin:0 0 10px}.map-info p{color:var(--muted);font-size:14px}
+.map-frame{border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:330px;background:#f3f5f7;display:flex;align-items:center;justify-content:center}
+.map-frame iframe{width:100%;height:100%;min-height:330px;border:0}
+.support{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.support a{padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff;box-shadow:0 8px 25px rgba(24,39,75,.04)}
+.support small{display:block;color:#858e9b}.support strong{font-size:15px;color:#27313e}
+footer{border-top:1px solid var(--line);padding:45px 0 25px;background:#fff}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}
+.footer-brand p{color:#858e9b;font-size:13px;max-width:320px}
+.footer h4{margin:0 0 12px;font-size:14px;color:#26303d}
+.footer a{display:block;color:#747e8c;text-decoration:none;font-size:13px;margin:7px 0}.footer a:hover{color:var(--orange)}
+.copyright{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;color:#707985;font-size:12px;text-align:center}
+@media(max-width:980px){
+.menu{display:none}.menu-toggle{display:block}
+.nav.open .menu{display:flex;position:absolute;top:76px;left:0;right:0;padding:15px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}
+.hero{grid-template-columns:1fr}.phone-stage{min-height:550px}.features,.roles{grid-template-columns:1fr 1fr}.map-wrap{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+.container{width:min(100% - 26px,1160px)}.hero{padding-top:55px}.hero h1{letter-spacing:-2.5px}
+.features,.roles,.support{grid-template-columns:1fr}.download{flex-direction:column;align-items:flex-start}.phone{width:245px;height:475px}.phone-stage{min-height:500px}.f1{left:0}.f2{right:0}.footer-grid{grid-template-columns:1fr}.section{padding:65px 0}
+}
+</style>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" />
-  <link rel="apple-touch-icon" href="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" />
-
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://admin.mrpipe.in" crossorigin />
-
-  <!-- JSON-LD Structured Data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://mrpipe.in/#organization",
-    "name": "MR PIPE",
-    "url": "https://mrpipe.in/",
-    "logo": "https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png",
-    "description": "MR PIPE. Pipes for Progress.",
-    "telephone": "+91 77425 50254",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91 77425 50254",
-      "contactType": "customer service",
-      "contactOption": "TollFree",
-      "areaServed": "IN",
-      "availableLanguage": ["English", "Hindi"]
-    },
-    "sameAs": [
-      "https://mrpipe.in/"
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data: WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://mrpipe.in/#website",
-    "url": "https://mrpipe.in/",
-    "name": "MR PIPE",
-    "description": "Official MR PIPE website and app download page.",
-    "publisher": {
-      "@id": "https://mrpipe.in/#organization"
-    },
-    "inLanguage": "en-IN"
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data: WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://mrpipe.in/#webpage",
-    "url": "https://mrpipe.in/",
-    "name": "MR PIPE | Official App Download",
-    "description": "Official MR PIPE app download landing page with customer support and location information.",
-    "isPartOf": {
-      "@id": "https://mrpipe.in/#website"
-    },
-    "about": {
-      "@id": "https://mrpipe.in/#organization"
-    },
-    "inLanguage": "en-IN"
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://mrpipe.in/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Download App",
-        "item": "https://mrpipe.in/#download"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Contact",
-        "item": "https://mrpipe.in/#contact"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data: MobileApplication
-       Add the actual Google Play URL in the offers/url fields when available. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "MR PIPE",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Android, iOS",
-    "description": "Official MR PIPE mobile application.",
-    "publisher": {
-      "@id": "https://mrpipe.in/#organization"
-    },
-    "url": "https://mrpipe.in/#download",
-    "downloadUrl": "https://srv1952360.hstgr.cloud/mrpipe-rewards.apk"
-  }
-  </script>
-
-  <style>
-
-    :root{
-      --orange:#d66b0b;
-      --orange-dark:#a94700;
-      --black:#11151a;
-      --dark:#171c22;
-      --text:#20242a;
-      --muted:#69717c;
-      --white:#fff;
-      --light:#f6f7f9;
-      --border:#e7e9ed;
-      --shadow:0 20px 60px rgba(0,0,0,.10);
-      --radius:24px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      color:var(--text);
-      background:var(--white);
-      line-height:1.6;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
-    .container{
-      width:min(1160px,92%);
-      margin:auto;
-    }
-
-    /* Header */
-    header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-    .nav{
-      min-height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .brand img{
-      width:118px;
-      height:auto;
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:28px;
-      font-weight:600;
-      font-size:14px;
-    }
-    .nav-links a:hover{color:var(--orange)}
-    .nav-btn{
-      background:var(--black);
-      color:#fff;
-      padding:11px 19px;
-      border-radius:999px;
-    }
-    .nav-btn:hover{background:var(--orange);color:#fff}
-
-    /* Hero */
-    .hero{
-      position:relative;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(214,107,11,.18), transparent 28%),
-        radial-gradient(circle at 5% 90%, rgba(214,107,11,.10), transparent 30%),
-        linear-gradient(135deg,#fff 0%,#f8f8f8 55%,#f1f3f5 100%);
-      padding:80px 0 75px;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:460px;
-      height:460px;
-      border:1px solid rgba(214,107,11,.12);
-      border-radius:50%;
-      right:-160px;
-      top:-180px;
-    }
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      align-items:center;
-      gap:70px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 13px;
-      border-radius:999px;
-      background:#fff3e8;
-      color:var(--orange-dark);
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin-bottom:20px;
-    }
-    .eyebrow span{
-      width:7px;height:7px;border-radius:50%;
-      background:var(--orange);
-    }
-    h1{
-      font-size:clamp(42px,6vw,76px);
-      line-height:1.02;
-      letter-spacing:-.045em;
-      color:var(--black);
-      margin-bottom:22px;
-    }
-    h1 em{
-      font-style:normal;
-      color:var(--orange);
-    }
-    .hero-copy{
-      font-size:18px;
-      color:#5d6570;
-      max-width:610px;
-      margin-bottom:30px;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:13px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:50px;
-      padding:0 22px;
-      border-radius:12px;
-      font-weight:800;
-      transition:.2s ease;
-    }
-    .btn-primary{
-      color:#fff;
-      background:linear-gradient(135deg,var(--orange),#ef8a22);
-      box-shadow:0 12px 25px rgba(214,107,11,.25);
-    }
-    .btn-primary:hover{transform:translateY(-2px)}
-    .btn-secondary{
-      background:#fff;
-      border:1px solid var(--border);
-    }
-    .btn-secondary:hover{border-color:var(--orange);color:var(--orange)}
-
-    .hero-card{
-      position:relative;
-      min-height:430px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .phone{
-      width:250px;
-      height:470px;
-      border-radius:38px;
-      padding:10px;
-      background:#111;
-      box-shadow:0 35px 70px rgba(0,0,0,.23);
-      transform:rotate(4deg);
-    }
-    .phone-screen{
-      width:100%;
-      height:100%;
-      border-radius:30px;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 50% 25%,rgba(214,107,11,.35),transparent 25%),
-        linear-gradient(155deg,#171c22,#07090c);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      padding:25px;
-      text-align:center;
-    }
-    .phone-screen img{
-      width:115px;
-      margin-bottom:24px;
-      filter:drop-shadow(0 10px 20px rgba(214,107,11,.18));
-    }
-    .phone-screen strong{font-size:25px}
-    .phone-screen small{color:#adb4bd;margin-top:8px}
-    .ring{
-      position:absolute;
-      width:330px;height:330px;
-      border-radius:50%;
-      border:1px solid rgba(214,107,11,.18);
-    }
-    .ring.r2{width:420px;height:420px}
-    .floating-card{
-      position:absolute;
-      background:#fff;
-      border:1px solid #eee;
-      box-shadow:var(--shadow);
-      border-radius:15px;
-      padding:13px 15px;
-      font-size:13px;
-      font-weight:800;
-    }
-    .floating-card.one{right:0;top:35px}
-    .floating-card.two{left:0;bottom:55px}
-
-    /* Sections */
-    section{padding:85px 0}
-    .section-head{
-      text-align:center;
-      max-width:700px;
-      margin:0 auto 45px;
-    }
-    .section-head .label{
-      color:var(--orange);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-    h2{
-      color:var(--black);
-      font-size:clamp(30px,4vw,46px);
-      line-height:1.1;
-      letter-spacing:-.035em;
-      margin-bottom:14px;
-    }
-    .section-head p{color:var(--muted)}
-
-    .features{
-      background:var(--light);
-    }
-    .feature-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    .feature{
-      background:#fff;
-      padding:30px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      transition:.2s ease;
-    }
-    .feature:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .icon{
-      width:50px;height:50px;
-      display:grid;place-items:center;
-      border-radius:15px;
-      background:#fff1e5;
-      color:var(--orange);
-      font-size:23px;
-      margin-bottom:20px;
-    }
-    .feature h3{margin-bottom:8px;font-size:19px}
-    .feature p{color:var(--muted);font-size:14px}
-
-    .download{
-      background:var(--black);
-      color:#fff;
-      overflow:hidden;
-      position:relative;
-    }
-    .download::before{
-      content:"";
-      position:absolute;
-      width:600px;height:600px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:50%;
-      right:-220px;top:-250px;
-    }
-    .download-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:55px;
-      align-items:center;
-    }
-    .download h2{color:#fff}
-    .download p{color:#b9c0c9;margin-bottom:25px}
-    .store-buttons{display:flex;flex-wrap:wrap;gap:12px}
-    .store{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      border:1px solid rgba(255,255,255,.17);
-      background:rgba(255,255,255,.07);
-      border-radius:12px;
-      padding:11px 16px;
-      min-width:180px;
-    }
-    .store:hover{background:rgba(255,255,255,.13)}
-    .store-icon{font-size:25px}
-    .store small{display:block;color:#aeb5be;font-size:10px}
-    .store strong{font-size:14px}
-    .qr-box{
-      background:#fff;
-      padding:22px;
-      border-radius:25px;
-      width:min(290px,100%);
-      justify-self:end;
-      color:var(--black);
-      text-align:center;
-    }
-    .qr-placeholder{
-      width:100%;
-      aspect-ratio:1;
-      display:grid;
-      place-items:center;
-      background:repeating-linear-gradient(45deg,#111 0 5px,#fff 5px 10px);
-      color:#fff;
-      font-weight:900;
-      text-shadow:0 2px 5px #000;
-      border-radius:10px;
-      margin-bottom:14px;
-    }
-    .qr-box p{color:#666;margin:0;font-size:13px}
-
-
-    /* Creative Download Section */
-    .download{
-      background:
-        radial-gradient(circle at 12% 20%,rgba(239,138,34,.20),transparent 25%),
-        radial-gradient(circle at 88% 80%,rgba(214,107,11,.18),transparent 28%),
-        #0b0e12;
-      color:#fff;
-      overflow:hidden;
-      position:relative;
-      isolation:isolate;
-    }
-    .download::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-      background-size:45px 45px;
-      mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent);
-      pointer-events:none;
-    }
-    .download-glow{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(5px);
-      opacity:.65;
-      z-index:0;
-      animation:floatGlow 7s ease-in-out infinite;
-    }
-    .glow-one{
-      width:240px;height:240px;
-      background:rgba(214,107,11,.18);
-      left:-90px;top:20%;
-    }
-    .glow-two{
-      width:320px;height:320px;
-      background:rgba(239,138,34,.10);
-      right:-100px;bottom:-80px;
-      animation-delay:-3s;
-    }
-    @keyframes floatGlow{
-      0%,100%{transform:translate(0,0) scale(1)}
-      50%{transform:translate(25px,-25px) scale(1.08)}
-    }
-    .download-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:55px;
-      align-items:center;
-    }
-    .download-content{position:relative;z-index:3}
-    .download-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:8px 14px;
-      border:1px solid rgba(239,138,34,.30);
-      background:rgba(239,138,34,.08);
-      border-radius:999px;
-      color:#ffad5c;
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.12em;
-      margin-bottom:20px;
-      backdrop-filter:blur(10px);
-    }
-    .pulse-dot{
-      width:8px;height:8px;
-      border-radius:50%;
-      background:#ef8a22;
-      box-shadow:0 0 0 0 rgba(239,138,34,.7);
-      animation:pulse 1.8s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(239,138,34,.7)}
-      70%{box-shadow:0 0 0 9px rgba(239,138,34,0)}
-      100%{box-shadow:0 0 0 0 rgba(239,138,34,0)}
-    }
-    .download h2{
-      color:#fff;
-      font-size:clamp(42px,5.5vw,72px);
-      line-height:.98;
-      letter-spacing:-.05em;
-      margin-bottom:22px;
-    }
-    .download h2 span{
-      color:#ef8a22;
-      text-shadow:0 0 35px rgba(239,138,34,.18);
-    }
-    .download p{
-      color:#aeb6c0;
-      max-width:570px;
-      margin-bottom:27px;
-      font-size:17px;
-    }
-    .download-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:13px;
-    }
-    .app-download-btn{
-      position:relative;
-      min-width:205px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:12px 13px;
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:15px;
-      background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.045));
-      color:#fff;
-      overflow:hidden;
-      transition:.25s ease;
-      box-shadow:0 12px 35px rgba(0,0,0,.18);
-    }
-    .app-download-btn::before{
-      content:"";
-      position:absolute;
-      top:0;left:-120%;
-      width:80%;
-      height:100%;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
-      transform:skewX(-20deg);
-      transition:.65s ease;
-    }
-    .app-download-btn:hover{
-      transform:translateY(-5px);
-      border-color:rgba(239,138,34,.65);
-      box-shadow:0 18px 40px rgba(0,0,0,.28),0 0 25px rgba(214,107,11,.12);
-    }
-    .app-download-btn:hover::before{left:140%}
-    .download-icon{
-      width:42px;height:42px;
-      display:grid;place-items:center;
-      border-radius:11px;
-      background:#fff;
-      color:#111;
-      font-size:20px;
-      flex:0 0 auto;
-    }
-    .download-icon.apple{font-size:24px}
-    .download-text{display:flex;flex-direction:column;line-height:1.1;flex:1}
-    .download-text small{font-size:8px;color:#9da5af;letter-spacing:.08em}
-    .download-text strong{font-size:15px;margin-top:4px}
-    .arrow{font-size:19px;color:#ef8a22}
-    .download-note{
-      margin-top:20px;
-      color:#818a95;
-      font-size:12px;
-    }
-    .download-note span{color:#ef8a22;font-weight:900}
-
-    .app-visual{
-      position:relative;
-      min-height:500px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .visual-orbit{
-      position:absolute;
-      border:1px solid rgba(239,138,34,.18);
-      border-radius:50%;
-      animation:orbitSpin 16s linear infinite;
-    }
-    .orbit-a{width:340px;height:340px}
-    .orbit-b{width:445px;height:445px;animation-duration:24s;animation-direction:reverse}
-    .orbit-c{width:535px;height:535px;animation-duration:32s}
-    .visual-orbit::before{
-      content:"";
-      position:absolute;
-      width:7px;height:7px;
-      border-radius:50%;
-      background:#ef8a22;
-      box-shadow:0 0 18px #ef8a22;
-      top:50%;left:-4px;
-    }
-    @keyframes orbitSpin{
-      to{transform:rotate(360deg)}
-    }
-    .app-glass-card{
-      position:relative;
-      width:275px;
-      min-height:370px;
-      padding:20px;
-      border:1px solid rgba(255,255,255,.20);
-      border-radius:34px;
-      background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));
-      box-shadow:0 35px 80px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.18);
-      backdrop-filter:blur(18px);
-      text-align:center;
-      animation:phoneFloat 4.5s ease-in-out infinite;
-      z-index:3;
-    }
-    @keyframes phoneFloat{
-      0%,100%{transform:translateY(0) rotate(1deg)}
-      50%{transform:translateY(-13px) rotate(-1deg)}
-    }
-    .app-topbar{
-      display:flex;gap:6px;
-      margin-bottom:25px;
-    }
-    .app-dot{
-      width:6px;height:6px;border-radius:50%;
-      background:rgba(255,255,255,.38);
-    }
-    .app-logo-circle{
-      width:120px;height:120px;
-      margin:8px auto 20px;
-      display:grid;place-items:center;
-      border-radius:50%;
-      background:#fff;
-      padding:18px;
-      box-shadow:0 0 0 8px rgba(239,138,34,.08),0 15px 45px rgba(214,107,11,.24);
-      animation:logoPulse 3s ease-in-out infinite;
-    }
-    @keyframes logoPulse{
-      0%,100%{box-shadow:0 0 0 8px rgba(239,138,34,.08),0 15px 45px rgba(214,107,11,.24)}
-      50%{box-shadow:0 0 0 15px rgba(239,138,34,.03),0 18px 55px rgba(214,107,11,.32)}
-    }
-    .app-logo-circle img{width:100%}
-    .app-title{font-size:29px;font-weight:900;letter-spacing:-.04em}
-    .app-subtitle{color:#9da5af;font-size:12px;margin-top:3px}
-    .app-mini-stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:6px;
-      margin-top:27px;
-    }
-    .app-mini-stats div{
-      padding:10px 4px;
-      border-radius:11px;
-      background:rgba(255,255,255,.06);
-    }
-    .app-mini-stats b{display:block;color:#fff;font-size:11px}
-    .app-mini-stats span{display:block;color:#777f8a;font-size:7px;margin-top:2px}
-    .scan-pill{
-      display:inline-block;
-      margin-top:22px;
-      padding:8px 13px;
-      border-radius:999px;
-      background:rgba(239,138,34,.11);
-      border:1px solid rgba(239,138,34,.25);
-      color:#f1a45c;
-      font-size:8px;
-      letter-spacing:.1em;
-      font-weight:900;
-    }
-    .floating-download-card{
-      position:absolute;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:14px;
-      background:rgba(17,21,26,.76);
-      backdrop-filter:blur(15px);
-      box-shadow:0 15px 35px rgba(0,0,0,.25);
-      z-index:5;
-      animation:cardFloat 4s ease-in-out infinite;
-    }
-    .floating-download-card > span{
-      width:36px;height:36px;
-      display:grid;place-items:center;
-      border-radius:10px;
-      background:rgba(239,138,34,.12);
-      color:#ef8a22;
-    }
-    .floating-download-card b{display:block;font-size:12px;color:#fff}
-    .floating-download-card small{display:block;font-size:9px;color:#7e8791;margin-top:2px}
-    .card-top{top:48px;right:-8px}
-    .card-bottom{bottom:55px;left:-8px;animation-delay:-2s}
-    @keyframes cardFloat{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-9px)}
-    }
-
-    .seo-info{
-      padding:45px 0;
-      background:#fff;
-      border-top:1px solid var(--border);
-    }
-    .seo-info h2{
-      font-size:25px;
-      margin-bottom:8px;
-    }
-    .seo-info p{
-      max-width:850px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* Contact */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:25px;
-      align-items:stretch;
-    }
-    .contact-card{
-      background:var(--light);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:32px;
-    }
-    .contact-card h3{font-size:24px;margin-bottom:24px}
-    .contact-item{
-      display:flex;
-      gap:14px;
-      padding:15px 0;
-      border-bottom:1px solid var(--border);
-    }
-    .contact-item:last-child{border-bottom:0}
-    .contact-item .ci{
-      width:42px;height:42px;
-      border-radius:12px;
-      background:#fff;
-      display:grid;place-items:center;
-      color:var(--orange);
-      flex:0 0 auto;
-    }
-    .contact-item small{
-      display:block;
-      color:#7a828c;
-      font-size:11px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:2px;
-    }
-    .contact-item a:hover{color:var(--orange)}
-    .map{
-      min-height:430px;
-      overflow:hidden;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-    .map::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      box-shadow:inset 0 0 60px rgba(0,0,0,.08);
-    }
-    .map iframe{width:100%;height:100%;min-height:430px;border:0}
-
-    footer{
-      background:#0d1014;
-      color:#aeb5be;
-      padding:28px 0;
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:center;
-    }
-    .footer-brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      color:#fff;
-      font-weight:800;
-    }
-    .footer-brand img{width:80px;filter:brightness(0) invert(1)}
-    footer p{font-size:13px}
-
-    @media(max-width:900px){
-      .hero-grid,.download-grid,.contact-grid{grid-template-columns:1fr}
-      .hero{padding:55px 0}
-      .hero-card{min-height:500px}
-      .qr-box{justify-self:start}
-      .feature-grid{grid-template-columns:1fr}
-      .nav-links{display:none}
-    }
-    @media(max-width:600px){
-      section{padding:65px 0}
-      .hero-actions,.store-buttons{flex-direction:column}
-      .btn,.store{width:100%}
-      .phone{width:220px;height:420px}
-      .floating-card.one{right:-5px}
-      .floating-card.two{left:-5px}
-      .footer-inner{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@graph":[
+  {"@type":"Organization","name":"MR PIPE","url":"https://mrpipe.in/","logo":"https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png","email":"support@mrpipe.in","telephone":"+91-77425-50254"},
+  {"@type":"WebSite","name":"MR PIPE","url":"https://mrpipe.in/"},
+  {"@type":"WebPage","name":"MR PIPE Rewards","url":"https://mrpipe.in/","description":"MR PIPE Rewards official website."},
+  {"@type":"MobileApplication","name":"MR PIPE Rewards","applicationCategory":"BusinessApplication","operatingSystem":"Android","downloadUrl":"https://srv1952360.hstgr.cloud/mrpipe-rewards.apk","publisher":{"@type":"Organization","name":"MR PIPE"}}
+ ]
+}
+</script>
 </head>
-
 <body>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="MR PIPE Home">
-        <img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE Logo">
-      </a>
+<nav class="nav" id="nav">
+<div class="container nav-inner">
+<a class="logo" href="/">
+<img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE">
+<div><strong>MR PIPE</strong><span>PIPES FOR PROGRESS.</span></div>
+</a>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Open menu">☰</button>
+<div class="menu">
+<a href="/">Home</a>
+<a href="/about-us">About</a>
+<a href="/faq">FAQ</a>
+<a href="/contact-support">Support</a>
+<a class="primary" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download App</a>
+</div>
+</div>
+</nav>
 
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#download">Download App</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-btn" href="#download">Get the App</a>
-      </nav>
-    </div>
-  </header>
+<main>
+<section class="container hero">
+<div>
+<span class="eyebrow">MR PIPE REWARDS • OFFICIAL</span>
+<h1>Reward every move.<br><span class="gradient">Progress together.</span></h1>
+<p>MR PIPE Rewards brings eligible points, transfers, redemptions and support into one simple digital experience for Dealers, Retailers and Plumbers.</p>
+<div class="actions">
+<a class="btn btn-main" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">⬇ Download MR PIPE App</a>
+<a class="btn btn-soft" href="/rewards-policy">Explore Rewards →</a>
+</div>
+<div class="trust">
+<div><b>Simple</b>Digital rewards</div>
+<div><b>Connected</b>Channel ecosystem</div>
+<div><b>Supported</b>Customer assistance</div>
+</div>
+</div>
 
-  <main>
+<div class="phone-stage">
+<div class="float f1"><small>REWARDS</small><strong>Points made simple</strong></div>
+<div class="float f2"><small>SUPPORT</small><strong>We're here to help</strong></div>
+<div class="float f3"><small>MR PIPE</small><strong>Pipes for Progress.</strong></div>
+<div class="phone">
+<div class="screen">
+<img class="screen-logo" src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE App">
+<div class="screen-title">MR PIPE</div>
+<div class="screen-sub">REWARDS • PROGRESS • PARTNERS</div>
+<div class="fake-card"><small>AVAILABLE POINTS</small><b>Rewards</b></div>
+<div class="fake-card"><small>QUICK ACCESS</small><b>Earn • Transfer • Redeem</b></div>
+<div class="mini-btn"></div>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="hero" id="home">
-      <div class="container hero-grid">
+<section class="section" id="features">
+<div class="container">
+<div class="section-head"><div class="kicker">One app. One ecosystem.</div><h2>Everything you need to manage rewards.</h2><p>A focused digital experience built around eligible rewards activity and channel support.</p></div>
+<div class="features">
+<div class="feature"><div class="ico">🎯</div><h3>Rewards Tracking</h3><p>Keep eligible reward activity and points information accessible through the app.</p></div>
+<div class="feature"><div class="ico">🔄</div><h3>Point Transfers</h3><p>Use transfer routes enabled for your participant category under the current Rewards Policy.</p></div>
+<div class="feature"><div class="ico">🎁</div><h3>Reward Redemption</h3><p>Redeem eligible rewards according to applicable program conditions.</p></div>
+<div class="feature"><div class="ico">📱</div><h3>Digital Experience</h3><p>Access important account and rewards information from your mobile device.</p></div>
+<div class="feature"><div class="ico">🛡️</div><h3>Account Support</h3><p>Get help with account, transaction, technical and rewards-related concerns.</p></div>
+<div class="feature"><div class="ico">📋</div><h3>Clear Policies</h3><p>Review privacy, rewards, refund, return, terms and grievance information online.</p></div>
+</div>
+</div>
+</section>
 
-        <div>
-          <div class="eyebrow"><span></span> Official MR PIPE App</div>
+<section class="section" id="partners">
+<div class="container">
+<div class="section-head"><div class="kicker">Built for the channel</div><h2>Made for the people who move the network.</h2><p>Participation and available features depend on the applicable MR PIPE program and eligibility.</p></div>
+<div class="roles">
+<div class="role"><b>Dealer</b><p>Manage eligible reward activity and permitted point transfers through the program.</p></div>
+<div class="role"><b>Retailer</b><p>Access eligible points, transfers and rewards according to the current program rules.</p></div>
+<div class="role"><b>Plumber</b><p>Participate in eligible reward activities and redeem available benefits.</p></div>
+</div>
+</div>
+</section>
 
-          <h1>MR PIPE<br><em>Pipes for Progress.</em></h1>
+<section class="container section" id="download">
+<div class="download">
+<div><div class="kicker">Get started</div><h2>MR PIPE Rewards, in your pocket.</h2><p>Download the Android app and access the MR PIPE Rewards experience.</p></div>
+<a class="btn btn-main" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download APK →</a>
+</div>
+</section>
 
-          <p class="hero-copy">
-            Stay connected with MR PIPE through our mobile app.
-            Access your account, updates, services and important information
-            quickly, securely and conveniently.
-          </p>
+<section class="section" id="location">
+<div class="container">
+<div class="section-head"><div class="kicker">Official Location</div><h2>Find MR PIPE.</h2><p>The location below uses only the official Google Maps link provided by MR PIPE.</p></div>
+<div class="map-wrap">
+<div class="map-info">
+<h3>MR PIPE Location</h3>
+<p>Use the embedded map to view the location or open the same official Google Maps destination directly.</p>
+<a class="btn btn-main" href="https://maps.app.goo.gl/XvbfAhuHzphSPyiZ9" target="_blank" rel="noopener">Open in Google Maps →</a>
+</div>
+<div class="map-frame">
+<iframe src="https://maps.app.goo.gl/XvbfAhuHzphSPyiZ9" title="MR PIPE Official Location" loading="lazy" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="hero-actions">
-            <a href="#download" class="btn btn-primary">↓ Download App</a>
-            <a href="#contact" class="btn btn-secondary">Contact Us</a>
-          </div>
-        </div>
+<section class="section" id="support">
+<div class="container">
+<div class="section-head"><div class="kicker">Need assistance?</div><h2>MR PIPE Support</h2><p>Reach the Customer Relationship Manager through the official channels.</p></div>
+<div class="support">
+<a href="tel:+917742550254"><small>CALL</small><strong>+91 77425 50254</strong></a>
+<a href="https://wa.me/917742550254"><small>WHATSAPP</small><strong>Chat with Support</strong></a>
+<a href="mailto:support@mrpipe.in"><small>EMAIL</small><strong>support@mrpipe.in</strong></a>
+</div>
+</div>
+</section>
+</main>
 
-        <div class="hero-card">
-          <div class="ring"></div>
-          <div class="ring r2"></div>
-
-          <div class="floating-card one">⚡ Fast & Easy</div>
-          <div class="floating-card two">✓ Official MR PIPE App</div>
-
-          <div class="phone">
-            <div class="phone-screen">
-              <img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE">
-              <strong>MR PIPE</strong>
-              <small>Pipes for Progress</small>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-head">
-          <div class="label">Why use the app</div>
-          <h2>MR PIPE App: Everything You Need in One Place</h2>
-          <p>A clean, convenient mobile experience designed for MR PIPE customers, partners and users.</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature">
-            <div class="icon">📱</div>
-            <h3>Mobile Access</h3>
-            <p>Access important MR PIPE information directly from your smartphone.</p>
-          </div>
-
-          <div class="feature">
-            <div class="icon">⚡</div>
-            <h3>Quick & Convenient</h3>
-            <p>Designed for a smooth and simple experience with easy navigation.</p>
-          </div>
-
-          <div class="feature">
-            <div class="icon">🔔</div>
-            <h3>Stay Updated</h3>
-            <p>Keep up with relevant updates, announcements and app notifications.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="download" id="download">
-      <div class="download-glow glow-one"></div>
-      <div class="download-glow glow-two"></div>
-
-      <div class="container download-grid">
-
-        <div class="download-content">
-          <div class="download-badge">
-            <span class="pulse-dot"></span>
-            OFFICIAL MR PIPE APP
-          </div>
-
-          <h2>MR PIPE.<br><span>Now in your pocket.</span></h2>
-
-          <p>
-            Download the MR PIPE app for a faster, smarter and more convenient
-            digital experience. Everything you need, right at your fingertips.
-          </p>
-
-          <div class="download-actions">
-            <!-- Replace # with the actual Google Play Store URL -->
-            <a class="app-download-btn" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk" download="mrpipe-rewards.apk">
-              <span class="download-icon">▶</span>
-              <span class="download-text">
-                <small>GET IT ON</small>
-                <strong>Google Play</strong>
-              </span>
-              <span class="arrow">↗</span>
-            </a>
-
-            <!-- Replace # with the actual App Store URL -->
-            <a class="app-download-btn" href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk" download="mrpipe-rewards.apk">
-              <span class="download-icon apple"></span>
-              <span class="download-text">
-                <small>DOWNLOAD ON THE</small>
-                <strong>App Store</strong>
-              </span>
-              <span class="arrow">↗</span>
-            </a>
-          </div>
-
-          <div class="download-note">
-            <span>✓</span> Secure &nbsp;&nbsp;
-            <span>✓</span> Easy to use &nbsp;&nbsp;
-            <span>✓</span> Official MR PIPE app
-          </div>
-        </div>
-
-        <div class="app-visual">
-          <div class="visual-orbit orbit-a"></div>
-          <div class="visual-orbit orbit-b"></div>
-          <div class="visual-orbit orbit-c"></div>
-
-          <div class="app-glass-card">
-            <div class="app-topbar">
-              <span class="app-dot"></span>
-              <span class="app-dot"></span>
-              <span class="app-dot"></span>
-            </div>
-
-            <div class="app-logo-circle">
-              <img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE Logo">
-            </div>
-
-            <div class="app-title">MR PIPE</div>
-            <div class="app-subtitle">Pipes for Progress.</div>
-
-            <div class="app-mini-stats">
-              <div><b>MR</b><span>PIPE</span></div>
-              <div><b>APP</b><span>READY</span></div>
-              <div><b>24/7</b><span>ACCESS</span></div>
-            </div>
-
-            <div class="scan-pill">SCAN • DOWNLOAD • GO</div>
-          </div>
-
-          <div class="floating-download-card card-top">
-            <span>⚡</span>
-            <div><b>Fast Access</b><small>Everything in one app</small></div>
-          </div>
-
-          <div class="floating-download-card card-bottom">
-            <span>✓</span>
-            <div><b>Official App</b><small>MR PIPE experience</small></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div class="label">Get in touch</div>
-          <h2>MR PIPE Customer Support & Contact</h2>
-          <p>Replace the sample contact details below with the official MR PIPE details.</p>
-        </div>
-
-        <div class="contact-grid">
-
-          <div class="contact-card">
-            <h3>MR PIPE</h3>
-
-            <div class="contact-item">
-              <div class="ci">📍</div>
-              <div>
-                <small>Office Address</small>
-                <span id="addressText">YOUR OFFICE ADDRESS, CITY, STATE - PIN CODE</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="ci">📞</div>
-              <div>
-                <small>Official MR PIPE Helpline</small>
-                <strong>Customer Relationship Manager</strong><br>
-                <a id="phoneLink" href="tel:+917742550254">+91 77425 50254</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="ci">💬</div>
-              <div>
-                <small>Tap for Call & WhatsApp</small>
-                <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:7px;">
-                  <a class="btn btn-primary" style="min-height:40px;padding:0 15px;font-size:13px;" href="https://wa.me/917742550254" target="_blank" rel="noopener">WhatsApp</a>
-                  <a class="btn btn-secondary" style="min-height:40px;padding:0 15px;font-size:13px;" href="tel:+917742550254">Call Now</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="ci">📍</div>
-              <div>
-                <small>Google Maps</small>
-                <a href="https://maps.app.goo.gl/XvbfAhuHzphSPyiZ9" target="_blank" rel="noopener">View Location on Google Maps</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="map">
-            <!--
-              IMPORTANT:
-              Replace the Google Maps iframe src below with the exact
-              Google Maps Embed URL for your MR PIPE office address.
-            -->
-            <iframe
-              title="MR PIPE location on Google Maps"
-              id="mapFrame"
-              loading="lazy"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=MR%20PIPE%2C%20India&output=embed">
-            </iframe>
-          </div>
-
-        </div>
-
-        <div style="text-align:center;margin-top:18px;">
-          <a class="btn btn-primary" href="https://maps.app.goo.gl/XvbfAhuHzphSPyiZ9"
-             target="_blank" rel="noopener">
-            📍 Open Exact Location in Google Maps
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-
-  <section class="seo-info" aria-label="About MR PIPE">
-    <div class="container">
-      <h2>About MR PIPE</h2>
-      <p>
-        MR PIPE is a pipe brand focused on providing a convenient digital
-        experience for customers, dealers and partners. Download the official
-        MR PIPE app to stay connected with services, updates and important
-        information.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE">
-        <span>MR PIPE</span>
-      </div>
-      <p>
-        © <span id="year"></span> MR PIPE. All Rights Reserved.
-        &nbsp; | &nbsp;
-        Powered by
-        <a href="https://www.morihix.com" target="_blank" rel="noopener"
-           style="color:#fff;font-weight:800;">Morihix Pvt. Ltd.</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function appLinkAlert(type){
-      alert("Please add the actual " + type + " in the HTML.");
-      return false;
-    }
-
-    /*
-      QUICK EDIT GUIDE
-      1. Replace Google Play href="#" with your Play Store URL.
-      2. Replace App Store href="#" with your App Store URL.
-      3. Replace the QR placeholder with:
-         <img src="YOUR_QR_IMAGE_URL" alt="Download MR PIPE App QR Code">
-      4. Replace phone, email and address above.
-      5. Replace the map iframe src with the official Google Maps Embed URL.
-    */
-  </script>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="/"><img src="https://admin.mrpipe.in/assets/mrpipe-logo-DFT5y-I7.png" alt="MR PIPE"><div><strong>MR PIPE</strong><span>PIPES FOR PROGRESS.</span></div></a>
+<p>Digital rewards and support experience for eligible MR PIPE channel participants.</p>
+</div>
+<div><h4>Explore</h4>
+<a href="/">Home</a><a href="/about-us">About Us</a><a href="/faq">FAQ</a><a href="/rewards-policy">Rewards Policy</a><a href="/contact-support">Contact / Support</a>
+</div>
+<div><h4>Account & Data</h4>
+<a href="/delete-account">Delete Account</a><a href="/grievance-data-request">Grievance / Data Request</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms & Conditions</a>
+</div>
+<div><h4>Policies</h4>
+<a href="/refund-policy">Refund & Cancellation</a><a href="/shipping-return-policy">Shipping & Return</a><a href="/contact-us">Contact Us</a><a href="https://maps.app.goo.gl/XvbfAhuHzphSPyiZ9" target="_blank" rel="noopener">Google Maps Location</a><a href="https://srv1952360.hstgr.cloud/mrpipe-rewards.apk">Download App</a>
+</div>
+</div>
+<div class="copyright">© 2026 MR PIPE. All Rights Reserved. | Powered by <a href="https://www.morihix.com" target="_blank" rel="noopener">Morihix Pvt. Ltd.</a></div>
+</div>
+</footer>
 
 </body>
 </html>
