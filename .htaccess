@@ -88,7 +88,7 @@ Options -Indexes
 # CUSTOM 404 REDIRECT
 # Any missing page/file redirects to the homepage.
 # ---------------------------------------------------------
-ErrorDocument 404 /
+ErrorDocument 404 /404.html
 
 # =========================================================
 # END MR PIPE
