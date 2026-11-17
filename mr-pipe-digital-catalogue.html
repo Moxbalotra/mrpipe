@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#092d50" />
+  <title>MR PIPE | Digital Product Catalogue</title>
+  <meta name="description" content="Explore the MR PIPE product catalogue in an interactive digital flipbook." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/css/page-flip.min.css">
+  <style>
+    :root {
+      --navy: #092d50;
+      --blue: #1268a8;
+      --sky: #eaf4fb;
+      --ink: #172b3d;
+      --muted: #6b7b89;
+      --line: #dce6ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(18,104,168,.10), transparent 28rem),
+        linear-gradient(145deg, #f7fafc, #edf3f8);
+    }
+    .topbar {
+      min-height: 76px;
+      padding: 14px clamp(16px, 4vw, 56px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: rgba(255,255,255,.92);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: grid; place-items: center; flex: 0 0 auto;
+      color: white; background: linear-gradient(145deg, var(--blue), var(--navy));
+      font-weight: 800; letter-spacing: -1px;
+      box-shadow: 0 6px 16px rgba(9,45,80,.18);
+    }
+    .brand-name { font-size: 18px; font-weight: 800; letter-spacing: .5px; color: var(--navy); }
+    .brand-sub { margin-top: 3px; color: var(--muted); font-size: 11px; letter-spacing: 1.7px; text-transform: uppercase; }
+    .top-actions { display: flex; gap: 9px; align-items: center; }
+    button, a.action {
+      border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px;
+      background: #fff; color: var(--navy); font: 600 13px Inter, sans-serif;
+      text-decoration: none; cursor: pointer; transition: .2s ease;
+    }
+    button:hover, a.action:hover { border-color: #9dbbd2; transform: translateY(-1px); }
+    .primary { color: #fff; background: var(--navy); border-color: var(--navy); }
+    .primary:hover { background: #10446f; }
+    .hero { text-align: center; padding: 34px 16px 18px; }
+    .eyebrow { color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: 2.6px; text-transform: uppercase; }
+    h1 { margin: 10px 0 8px; color: var(--navy); font-size: clamp(25px, 4vw, 38px); letter-spacing: -1.3px; }
+    .hero p { margin: 0 auto; max-width: 600px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .viewer-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 16px auto 0; padding: clamp(12px, 2.4vw, 24px);
+      border: 1px solid rgba(255,255,255,.9); border-radius: 22px;
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 22px 65px rgba(22,55,82,.10);
+      backdrop-filter: blur(10px);
+    }
+    .viewer-head {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; margin-bottom: 15px;
+    }
+    .viewer-label { color: var(--navy); font-size: 12px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; }
+    .viewer-hint { color: var(--muted); font-size: 11px; }
+    .book-stage {
+      position: relative; display: grid; place-items: center;
+      min-height: 420px; padding: 8px 0 14px; overflow: hidden;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #e8eef3, #f7f9fb 48%, #e7edf2);
+    }
+    #book { width: 100%; max-width: 1050px; height: min(72vh, 760px); margin: auto; }
+    #book .page { background: #fff; overflow: hidden; }
+    #book .page canvas { display: block; width: 100%; height: 100%; object-fit: fill; }
+    .loading {
+      position: absolute; inset: 0; z-index: 5; display: grid; place-content: center;
+      gap: 12px; text-align: center; color: var(--navy); background: #f4f8fb;
+    }
+    .spinner { width: 38px; height: 38px; margin: auto; border: 3px solid #d5e4ef; border-top-color: var(--blue); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading small { color: var(--muted); }
+    .error { max-width: 560px; padding: 20px; line-height: 1.6; }
+    .toolbar {
+      display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+      gap: 9px; padding-top: 16px;
+    }
+    .toolbar button { min-width: 42px; }
+    .page-counter {
+      display: flex; align-items: center; gap: 7px; padding: 0 8px;
+      color: var(--muted); font-size: 12px; font-weight: 600;
+    }
+    #pageInput {
+      width: 54px; padding: 9px 5px; border: 1px solid var(--line);
+      border-radius: 8px; text-align: center; color: var(--navy); font: 600 13px Inter;
+    }
+    .bottom-note { padding: 24px 16px 32px; text-align: center; color: #8795a1; font-size: 11px; }
+    .bottom-note strong { color: #53697b; }
+    .hidden { display: none !important; }
+    @media (max-width: 640px) {
+      .topbar { min-height: 64px; padding: 10px 14px; }
+      .brand-mark { width: 40px; height: 40px; }
+      .brand-name { font-size: 15px; }
+      .brand-sub { font-size: 9px; letter-spacing: 1px; }
+      .top-actions .download-label { display: none; }
+      .top-actions button, .top-actions a.action { padding: 9px 11px; font-size: 12px; }
+      .hero { padding: 25px 16px 12px; }
+      .hero p { font-size: 12px; }
+      .viewer-shell { width: calc(100% - 16px); margin-top: 10px; padding: 9px; border-radius: 15px; }
+      .viewer-head { padding: 3px 4px; }
+      .viewer-hint { display: none; }
+      .book-stage { min-height: 330px; padding: 4px 0; }
+      #book { height: min(66vh, 650px); }
+      .toolbar { gap: 6px; padding-top: 11px; }
+      .toolbar button { padding: 9px 11px; min-width: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">MR</div>
+      <div>
+        <div class="brand-name">MR PIPE</div>
+        <div class="brand-sub">Digital Product Catalogue</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="soundToggle" type="button" aria-pressed="true">♫ Sound: On</button>
+      <a class="action primary" href="https://mrpipe.in/mrpipe-ctlogs.pdf" target="_blank" rel="noopener"> <span class="download-label">Download </span>PDF ↓</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Explore our product range</div>
+    <h1>MR PIPE Product Catalogue</h1>
+    <p>Discover our catalogue in an interactive reading experience. Turn the pages, explore the details and find the right solution.</p>
+  </section>
+
+  <main class="viewer-shell">
+    <div class="viewer-head">
+      <div class="viewer-label">Interactive Catalogue</div>
+      <div class="viewer-hint">Click or swipe the page to turn • Use arrow keys to navigate</div>
+    </div>
+
+    <div class="book-stage" id="bookStage">
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <strong>Preparing your catalogue...</strong>
+        <small>Please wait while the pages load.</small>
+      </div>
+      <div id="book" aria-label="MR PIPE digital catalogue"></div>
+    </div>
+
+    <div class="toolbar">
+      <button id="firstBtn" type="button" title="First page">|‹</button>
+      <button id="prevBtn" type="button" title="Previous page">← Previous</button>
+      <div class="page-counter">
+        <input id="pageInput" type="number" min="1" value="1" aria-label="Page number">
+        <span id="pageTotal">/ --</span>
+      </div>
+      <button id="nextBtn" class="primary" type="button" title="Next page">Next →</button>
+      <button id="lastBtn" type="button" title="Last page">›|</button>
+      <button id="fullscreenBtn" type="button" title="Fullscreen">⛶</button>
+    </div>
+  </main>
+
+  <footer class="bottom-note">© <span id="year"></span> <strong>MR PIPE</strong> · Digital Catalogue</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+  <script>
+    (() => {
+      const PDF_URL = "https://mrpipe.in/mrpipe-ctlogs.pdf";
+      const loading = document.getElementById("loading");
+      const bookElement = document.getElementById("book");
+      const pageInput = document.getElementById("pageInput");
+      const pageTotal = document.getElementById("pageTotal");
+      const soundToggle = document.getElementById("soundToggle");
+      let pageFlip = null;
+      let soundEnabled = true;
+      let audioContext = null;
+      let soundReady = false;
+      let totalPages = 0;
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+      function prepareSound() {
+        if (!soundEnabled) return;
+        try {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (!AudioCtx) return;
+          if (!audioContext) audioContext = new AudioCtx();
+          if (audioContext.state === "suspended") audioContext.resume();
+          soundReady = true;
+        } catch (error) {
+          console.warn("Audio is unavailable in this browser.", error);
+        }
+      }
+
+      // A short, soft paper-like sound generated locally with Web Audio.
+      function playPageSound() {
+        if (!soundEnabled || !soundReady || !audioContext) return;
+        try {
+          const ctx = audioContext;
+          if (ctx.state !== "running") return;
+          const duration = 0.13;
+          const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * duration), ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < data.length; i++) {
+            const fade = Math.pow(1 - i / data.length, 2.2);
+            data[i] = (Math.random() * 2 - 1) * fade;
+          }
+          const source = ctx.createBufferSource();
+          const filter = ctx.createBiquadFilter();
+          const gain = ctx.createGain();
+          source.buffer = buffer;
+          filter.type = "bandpass";
+          filter.frequency.value = 1250;
+          filter.Q.value = 0.7;
+          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.10, ctx.currentTime + 0.018);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+          source.connect(filter);
+          filter.connect(gain);
+          gain.connect(ctx.destination);
+          source.start();
+          source.stop(ctx.currentTime + duration);
+        } catch (error) {
+          console.warn("Could not play page sound.", error);
+        }
+      }
+
+      // Browsers require a user gesture before audio can play.
+      bookElement.addEventListener("pointerdown", prepareSound);
+      document.getElementById("soundToggle").addEventListener("click", () => {
+        soundEnabled = !soundEnabled;
+        soundToggle.textContent = soundEnabled ? "♫ Sound: On" : "♫ Sound: Off";
+        soundToggle.setAttribute("aria-pressed", String(soundEnabled));
+        if (soundEnabled) prepareSound();
+      });
+
+      function updateCounter(index = 0) {
+        pageInput.value = Math.min(index + 1, totalPages);
+        pageTotal.textContent = `/ ${totalPages}`;
+      }
+
+      function showError(message) {
+        loading.innerHTML = `<div class="error"><strong>Catalogue could not be loaded.</strong><br>${message}<br><br><a href="${PDF_URL}" target="_blank" rel="noopener">Open the PDF directly</a></div>`;
+      }
+
+      async function renderPdf() {
+        try {
+          const pdf = await pdfjsLib.getDocument({ url: PDF_URL }).promise;
+          totalPages = pdf.numPages;
+          const pageElements = [];
+          let baseWidth = 595;
+          let baseHeight = 842;
+
+          for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+            const pdfPage = await pdf.getPage(pageNumber);
+            const viewport = pdfPage.getViewport({ scale: 1 });
+            if (pageNumber === 1) {
+              baseWidth = viewport.width;
+              baseHeight = viewport.height;
+            }
+
+            // Render at a moderate resolution to balance clarity and mobile memory use.
+            const scale = Math.min(1.45, 1500 / viewport.width);
+            const renderViewport = pdfPage.getViewport({ scale });
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d", { alpha: false });
+            canvas.width = Math.ceil(renderViewport.width);
+            canvas.height = Math.ceil(renderViewport.height);
+            await pdfPage.render({ canvasContext: context, viewport: renderViewport }).promise;
+
+            const page = document.createElement("div");
+            page.className = "page";
+            page.dataset.pageNumber = String(pageNumber);
+            page.appendChild(canvas);
+            pageElements.push(page);
+          }
+
+          const aspect = baseWidth / baseHeight;
+          const stageWidth = Math.min(bookElement.clientWidth || 1000, 1050);
+          const isNarrow = window.matchMedia("(max-width: 640px)").matches;
+          const pageWidth = isNarrow ? Math.min(stageWidth, 430) : Math.min(stageWidth / 2, 525);
+          const pageHeight = Math.min(760, Math.max(420, pageWidth / aspect));
+
+          pageFlip = new St.PageFlip(bookElement, {
+            width: Math.round(pageWidth),
+            height: Math.round(pageHeight),
+            size: "stretch",
+            minWidth: 280,
+            maxWidth: 1050,
+            minHeight: 360,
+            maxHeight: 900,
+            showCover: true,
+            usePortrait: true,
+            drawShadow: true,
+            maxShadowOpacity: 0.28,
+            flippingTime: 850,
+            mobileScrollSupport: false,
+            autoSize: true,
+            clickEventForward: true,
+            useMouseEvents: true
+          });
+
+          pageFlip.loadFromHTML(pageElements);
+          pageTotal.textContent = `/ ${totalPages}`;
+          updateCounter(0);
+          pageFlip.on("flip", (event) => {
+            updateCounter(event.data);
+            playPageSound();
+          });
+          pageFlip.on("changeState", () => {
+            // Reserved for future loading/animation state handling.
+          });
+          loading.classList.add("hidden");
+
+          // PDF.js pages are no longer needed after their canvases have been rendered.
+          pdf.destroy();
+        } catch (error) {
+          console.error(error);
+          const message = error && error.message ? error.message : "Please check the PDF URL and its cross-origin (CORS) settings.";
+          showError(message);
+        }
+      }
+
+      function flipTo(page) {
+        if (!pageFlip || !totalPages) return;
+        const target = Math.max(0, Math.min(totalPages - 1, Number(page) - 1));
+        pageFlip.turnToPage(target);
+        updateCounter(target);
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => { prepareSound(); pageFlip?.flipPrev(); });
+      document.getElementById("nextBtn").addEventListener("click", () => { prepareSound(); pageFlip?.flipNext(); });
+      document.getElementById("firstBtn").addEventListener("click", () => flipTo(1));
+      document.getElementById("lastBtn").addEventListener("click", () => flipTo(totalPages));
+      pageInput.addEventListener("change", () => flipTo(pageInput.value));
+
+      document.getElementById("fullscreenBtn").addEventListener("click", async () => {
+        const target = document.querySelector(".viewer-shell");
+        try {
+          if (!document.fullscreenElement) await target.requestFullscreen();
+          else await document.exitFullscreen();
+        } catch (error) {
+          console.warn("Fullscreen is not available.", error);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!pageFlip || event.target === pageInput) return;
+        if (event.key === "ArrowRight") { prepareSound(); pageFlip.flipNext(); }
+        if (event.key === "ArrowLeft") { prepareSound(); pageFlip.flipPrev(); }
+      });
+
+      renderPdf();
+    })();
+  </script>
+</body>
+</html>
